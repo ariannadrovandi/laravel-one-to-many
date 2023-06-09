@@ -27,12 +27,12 @@
             @enderror
         </div>
         <div class="mb-3">
-            <label for="body">Body</label>
-            <textarea name="body" id="body" rows="10"
-                class="form-control @error('body')
+            <label for="description">Description</label>
+            <textarea name="description" id="description" rows="10"
+                class="form-control @error('description')
                 is-invalid
-            @enderror"></textarea>
-            @error('body')
+            @enderror" aria-describedby="descriptionProject"></textarea>
+            @error('description')
                 {{ $message }}
             @enderror
         </div>

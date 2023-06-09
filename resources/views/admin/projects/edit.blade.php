@@ -29,10 +29,10 @@
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label ">Descrizione</label>
-                <input type="text" class="form-control @error('descrption') is-invalid @enderror" name="description"
-                    id="description" aria-describedby="descriptionHelp" value="{{ $project->description }}">
+                <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description" rows="10">
+                </textarea>
                 <div id="descriptionHelp" class="form-text">Modifica la descrizione</div>
-                @error('descrption')
+                @error('description')
                     <div class="alert alert-danger mt-2">{{ $message }}</div>
                 @enderror
             </div>

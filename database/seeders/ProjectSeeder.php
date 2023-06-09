@@ -18,12 +18,12 @@ class ProjectSeeder extends Seeder
     {
         $projects = config('projects');
         foreach ($projects as $project) {
-            $newPost = new Project();
-            $newPost->title = $project['title'];
-            $newPost->slug = Str::slug($project['title'], '-');
-            $newPost->image = $project['image'];
-            $newPost->description = $project['description'];
-            $newPost->save();
+            $newProject = new Project();
+            $newProject->title = $project['title'];
+            $newProject->slug = Str::slug($project['title'], '-');
+            $newProject->image = $project['image'];
+            $newProject->description = $project['description'];
+            $newProject->save();
         }
     }
 }
