@@ -19,6 +19,7 @@
                 <th scope="col">Image</th>
                 <th scope="col">Created</th>
                 <th scope="col">Actions</th>
+                <th scope="col">Type</th>
             </tr>
         </thead>
         <tbody>
@@ -38,6 +39,7 @@
                             <button type='submit' class="delete-button btn btn-outline-danger m-1" data-item-title="{{ $project->title }}"> <i class="fa-solid fa-trash"></i></button>
                         </form>
                     </td>
+                    <td> {{ $project->type ? $project->type->name : 'No tech specified' }} </td>
                 </tr>
             @endforeach
         </tbody>

@@ -29,13 +29,26 @@
         <div class="mb-3">
             <label for="description">Description</label>
             <textarea name="description" id="description" rows="10"
-                class="form-control @error('description')
-                is-invalid
-            @enderror" aria-describedby="descriptionProject"></textarea>
+                class="form-control
+                @error('description')is-invalid
+
+            @enderror" aria-describedby="descriptionProject">
+            </textarea>
             @error('description')
                 {{ $message }}
             @enderror
         </div>
+       <div class="mb-3">
+        <select name="type_id" id="type_id" class="form-control @error('type_id') is-invalid @enderror">
+            <option value="">Select tech</option>
+            @foreach ($types as $type)
+                <option value="{{ $type->id }}">{{ $type->name }}</option>
+            @endforeach
+        </select>
+        @error('type_id')
+            {{$message}}
+        @enderror
+       </div>
         <button type="submit" class="btn btn-success">Save</button>
         <button type="reset" class="btn btn-primary">Reset</button>
     </form>

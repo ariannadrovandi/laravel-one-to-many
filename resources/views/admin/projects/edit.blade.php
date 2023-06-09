@@ -27,6 +27,7 @@
                     <div class="alert alert-danger mt-2">{{ $message }}</div>
                 @enderror
             </div>
+
             <div class="mb-3">
                 <label for="description" class="form-label ">Descrizione</label>
                 <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description" rows="10">
@@ -37,6 +38,21 @@
                 @enderror
             </div>
 
+            <div class="mb3">
+                <label for="type_id">Type</label>
+                <select name="type_id" id="type_id" class="form-control @error('type_id') is-invalid @enderror">
+                    <option value="">Select</option>
+                    @foreach ($types as $type)
+                        <option value="{{ $type->id }}"
+                            {{ $type->id == old('type_id', $project->type_id) ? 'selected' : '' }}>
+                            {{ $type->name }}
+                        </option>
+                    @endforeach
+                </select>
+                @error('category_id')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>
             <button type="reset" class="btn btn-primary">Reset</button>
